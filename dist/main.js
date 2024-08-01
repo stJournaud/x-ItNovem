@@ -1,12 +1,7 @@
 "use strict";
-var http = require("http");
-var server = http
-    .createServer(function (req, res) {
-    console.log(req);
-    res.setHeader("Content-Ype", "text/plain");
-    res.write("Try /download or /:uic");
-    res.end();
-})
-    .listen(3000, "localhost", function () {
-    console.log("listening on port 3000");
+var express = require("express");
+var app = express();
+app.get("/", function (req, res) {
+    res.send("Successfull response.");
 });
+app.listen(3000, function () { return console.log("listening on port 3000"); });
