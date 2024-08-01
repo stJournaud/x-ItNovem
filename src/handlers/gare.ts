@@ -1,13 +1,11 @@
 import { Request, Response } from "express";
 const fs = require("fs");
 import { parse } from "csv-parse";
-// TODO; Passer en ENV
-const file = "../objets-trouves-restitution.csv";
 
 export function getItemsByStation(req: Request, res: Response) {
   const records: any[] = [];
   const uic = req.params.uic;
-  const readStream = fs.createReadStream(file).pipe(
+  const readStream = fs.createReadStream(process.env.CSVFILE).pipe(
     parse({
       delimiter: `;`,
       columns: true,
