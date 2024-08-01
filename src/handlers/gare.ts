@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 const fs = require("fs");
 import { parse } from "csv-parse";
+// TODO; Passer en ENV
 const file = "../objets-trouves-restitution.csv";
 
 export function getItemsByStation(req: Request, res: Response) {
@@ -25,6 +26,7 @@ export function getItemsByStation(req: Request, res: Response) {
     console.error(err.message);
   });
   readStream.on("end", function () {
+    res.status(200);
     res.send(records);
   });
 }
