@@ -9,8 +9,6 @@ export function getItemsByStation(req: Request, res: Response) {
     parse({
       delimiter: `;`,
       columns: true,
-      from: 2,
-      skip_records_with_error: true,
     })
   );
   readStream.on("readable", function () {
