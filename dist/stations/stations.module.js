@@ -6,21 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.StationsModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const stations_module_1 = require("./stations/stations.module");
-const files_module_1 = require("./files/files.module");
-const nest_csv_parser_1 = require("nest-csv-parser");
-let AppModule = class AppModule {
+const stations_controller_1 = require("./stations.controller");
+const stations_service_1 = require("./stations.service");
+let StationsModule = class StationsModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.StationsModule = StationsModule;
+exports.StationsModule = StationsModule = __decorate([
     (0, common_1.Module)({
-        imports: [stations_module_1.StationsModule, files_module_1.FilesModule, nest_csv_parser_1.CsvModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [stations_controller_1.StationsController],
+        providers: [stations_service_1.StationsService]
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], StationsModule);
+//# sourceMappingURL=stations.module.js.map
