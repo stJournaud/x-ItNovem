@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
 const fs = require("fs");
-import { parse } from "csv-parse";
+import { parse } from 'csv-parse';
 
 export function getItemsByStation(req: Request, res: Response) {
-  const records: any[] = [];
+  const records: Array<string>[] = [];
   const uic = req.params.uic;
+  // Read the file
   const readStream = fs.createReadStream(process.env.CSVFILE).pipe(
     parse({
       delimiter: `;`,
